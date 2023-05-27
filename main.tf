@@ -169,10 +169,10 @@ resource "aws_codepipeline" "cicd-pipeline" {
             version          = "1"
             output_artifacts = ["tf-code"]
             configuration = {
-                FullRepositoryId = "AgrimarketUN/AWS-Terraform-Pipeline"
-                BranchName = "main"
-                ConnectionArn = var.codestar_credentials
+                FullRepositoryId = "psiquedelos/is2_front"
+                ConnectionArn = var.dockerhub_credentials
                 OutputArtifactFormat = "CODE_ZIP"
+                BranchName       = "main"
 
             }
         }
