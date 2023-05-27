@@ -92,7 +92,7 @@ resource "aws_iam_role_policy_attachment" "tf-build-attachment-2" {
 
 #-------------------------s3--------------------------------
 resource "aws_s3_bucket" "codepipeline_artifacts" {
-  bucket = "c0d3pipeline-artfacts"
+  bucket = "c0d3pipeline-artfacts-B"
 }
 #------------------------pipe--------------------------------
 
@@ -151,7 +151,7 @@ resource "aws_codebuild_project" "tf-apply" {
 }
 
 resource "aws_codepipeline" "cicd-pipeline" {
-    name     = "cicd-pipeline"
+    name     = "cicd-pipeline-back"
     role_arn = aws_iam_role.codepipeline-role.arn
 
     artifact_store {
